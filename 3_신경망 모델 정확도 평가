@@ -1,0 +1,18 @@
+model.evaluate(X_test, Y_test)
+
+history_dict = history.history
+print(history_dict.keys())
+
+acc = history_dict['accuracy']
+val_acc = history_dict['val_accuracy']
+
+epochs = np.arange(1, len(acc) + 1)
+
+plt.plot(epochs, acc, 'bo', label='Training acc')
+plt.plot(epochs, val_acc, 'r', label='Validation acc')
+plt.title('Training and validation accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.ylim(0.5,0.95)
+plt.show()
